@@ -1,0 +1,197 @@
+---
+const certifications = [
+  {
+    name: "Certified Kubernetes Administrator (CKA)",
+    issuer: "Linux Foundation",
+    validationNumber: "LF-gdax2f9va0",
+    icon: "☸️",
+    color: "#326CE5"
+  },
+  {
+    name: "MongoDB Certified Developer",
+    issuer: "MongoDB University",
+    validationNumber: "476214740",
+    icon: "🍃",
+    color: "#00ED64"
+  },
+  {
+    name: "Professional Scrum Developer",
+    issuer: "Scrum.org",
+    validationNumber: "639688",
+    icon: "💻",
+    color: "#3B82F6"
+  },
+  {
+    name: "Professional Scrum Master",
+    issuer: "Scrum.org",
+    validationNumber: "592581",
+    icon: "🎯",
+    color: "#8B5CF6"
+  },
+  {
+    name: "Professional Scrum Product Owner",
+    issuer: "Scrum.org",
+    validationNumber: "604613",
+    icon: "📦",
+    color: "#06B6D4"
+  }
+];
+---
+
+<section id="certifications" class="section certifications-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtitle">
+        Professional certifications validating expertise in cloud, databases, and agile methodologies
+      </p>
+    </div>
+
+    <div class="certifications-grid">
+      {certifications.map((cert, index) => (
+        <div class="cert-card fade-in" style={`animation-delay: ${index * 0.1}s;`}>
+          <div class="cert-icon" style={`background: ${cert.color}20; color: ${cert.color};`}>
+            <span>{cert.icon}</span>
+          </div>
+          <div class="cert-content">
+            <h3 class="cert-name">{cert.name}</h3>
+            <p class="cert-issuer">{cert.issuer}</p>
+            <div class="cert-validation">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>ID: {cert.validationNumber}</span>
+            </div>
+          </div>
+          <div class="cert-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .certifications-section {
+    background: var(--color-bg);
+  }
+
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .cert-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-md);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cert-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary)10, transparent);
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  .cert-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+  }
+
+  .cert-card:hover::before {
+    opacity: 1;
+  }
+
+  .cert-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cert-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cert-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.3;
+  }
+
+  .cert-issuer {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .cert-validation {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-family: var(--font-mono);
+  }
+
+  .cert-validation svg {
+    color: var(--color-primary);
+  }
+
+  .cert-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    color: var(--color-text-muted);
+    opacity: 0.3;
+    transition: var(--transition);
+  }
+
+  .cert-card:hover .cert-badge {
+    opacity: 1;
+    color: var(--color-primary);
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .certifications-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+      padding: var(--spacing-md);
+    }
+
+    .cert-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+</style>
