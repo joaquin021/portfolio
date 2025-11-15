@@ -311,6 +311,10 @@ const codeHTML = `<span class="code-keyword">public class</span> <span class="co
   }
 
   @media (max-width: 640px) {
+    .hero {
+      padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
     .cta-buttons {
       flex-direction: column;
     }
@@ -320,7 +324,31 @@ const codeHTML = `<span class="code-keyword">public class</span> <span class="co
     }
 
     .code-block {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
+      margin: 0 calc(-1 * var(--spacing-md));
+      max-width: calc(100vw - 2 * var(--spacing-md));
+    }
+
+    .code-content {
+      font-size: 0.65rem;
+      padding: var(--spacing-sm);
+      overflow-x: auto;
+    }
+
+    .code-content pre {
+      min-width: max-content;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .name {
+      font-size: 2rem;
+    }
+
+    .title {
+      font-size: 1.5rem;
     }
   }
 </style>

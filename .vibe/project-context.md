@@ -328,6 +328,39 @@ Location: `.github/workflows/deploy.yml`
 - GitHub Actions workflow created
 - Astro config prepared for GitHub Pages
 
+## Recent Fixes and Improvements
+
+### Mobile Responsiveness (November 15, 2024)
+**Issue:** Hero section not displaying correctly on mobile devices
+- Content was too close to screen edges
+- Code block (engineer.java) was too wide, forcing horizontal scroll
+- Typography sizes not optimized for mobile
+
+**Solution implemented in Hero.astro:**
+- Added horizontal padding to hero section on mobile (`padding: var(--spacing-2xl) var(--spacing-md)`)
+- Reduced code block font size to 0.65rem on mobile
+- Set max-width for code block to prevent overflow: `max-width: calc(100vw - 2 * var(--spacing-md))`
+- Made code content scrollable internally with `overflow-x: auto`
+- Adjusted typography for mobile: name (2rem), title (1.5rem), description (1rem)
+- Reduced code block padding on mobile for better space usage
+
+### Footer Update
+- Updated copyright year from 2024 to 2025 in Contact.astro
+
+## Deployment Configuration
+
+### Repository Information
+- **GitHub Username:** joaquin021
+- **Repository Name:** portfolio
+- **Deployment URL:** https://joaquin021.github.io/portfolio/
+
+### astro.config.mjs
+Configured with:
+```javascript
+site: 'https://joaquin021.github.io',
+base: '/portfolio',
+```
+
 ## Last Updated
 November 15, 2024
 - Updated with Grupo MasOrange experience (current position)
@@ -338,4 +371,6 @@ November 15, 2024
 - Created comprehensive README in English
 - Updated .gitignore with complete ignore rules
 - Created GitHub Actions workflow for automated deployment
-- Configured astro.config.mjs for GitHub Pages
+- Configured astro.config.mjs for GitHub Pages with user's repository
+- Fixed mobile responsiveness issues in Hero section
+- Updated footer copyright to 2025
