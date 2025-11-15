@@ -343,6 +343,7 @@ Location: `.github/workflows/deploy.yml`
 - Made code content scrollable internally with `overflow-x: auto`
 - Adjusted typography for mobile: name (2rem), title (1.5rem), description (1rem)
 - Reduced code block padding on mobile for better space usage
+- Hidden scroll indicator on mobile to prevent overlap with location text (`display: none`)
 
 ### Footer Update
 - Updated copyright year from 2024 to 2025 in Contact.astro
