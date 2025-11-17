@@ -1,12 +1,12 @@
 # Portfolio Website - Project Context
 
 ## Overview
-This is a static landing page/portfolio website built with Astro for Joaquín Roca, a Senior Software Engineer. The website showcases his professional experience, skills, certifications, and contact information in an attractive, modern, and responsive design.
+This is a static landing page/portfolio website built with Astro for Joaquín Roca Soler, a Senior Software Engineer. The website showcases his professional experience, skills, certifications, and contact information in an attractive, modern, and responsive design.
 
 ## Project Details
 
 ### Client Information
-- **Name:** Joaquín Roca
+- **Name:** Joaquín Roca Soler
 - **Title:** Senior Software Engineer
 - **Location:** Alcalá de Henares, Madrid
 
@@ -52,11 +52,11 @@ Base layout component that provides:
 - Animation keyframes (fadeIn, slideIn, float)
 - Scrollbar styling
 
-**Color Scheme:**
-- Primary: #3b82f6 (blue)
-- Secondary: #8b5cf6 (purple)
-- Accent: #06b6d4 (cyan)
-- Background: Dark theme (#0a0e27, #151935, #1e2440)
+**Color Scheme (Brutalist Web Design):**
+- Background: #ffffff (white)
+- Text: #000000 (black)
+- Accent: #FFD700 (gold/yellow)
+- Secondary backgrounds: #f5f5f5 (light gray), #000000 (black for contrast sections)
 
 ### 2. Hero.astro
 First section of the page featuring:
@@ -183,13 +183,15 @@ Scrum, Kanban, TDD, BDD, Agile
 
 ## Design Features
 
-### Visual Design
-- Dark theme with gradient overlays
-- Modern glassmorphism effects
-- Smooth animations and transitions
-- Floating elements
-- Gradient text effects
-- Card-based layouts with hover states
+### Visual Design (Brutalist Web)
+- High contrast black and white theme
+- Bold, heavy typography (Space Grotesk font)
+- No gradients - pure flat colors
+- Thick borders (4px-8px)
+- Hard shadow effects (offset box-shadows)
+- Minimalist, no-nonsense aesthetic
+- Yellow (#FFD700) accent color for emphasis
+- Card-based layouts with sharp edges and hover transforms
 
 ### Responsive Design
 - Mobile-first approach
@@ -363,15 +365,17 @@ base: '/portfolio',
 ```
 
 ## Last Updated
-November 15, 2024
-- Updated with Grupo MasOrange experience (current position)
-- Added new technologies: Java 21, Vert.x, Kafka, Uber Cadence, BigQuery, OpenAPI, Bazel
-- Added Google Cloud Platform (BigQuery, Cloud Storage)
-- Included AI development tools: GitHub Copilot, Claude Code
-- Updated hero section and skills categories
-- Created comprehensive README in English
-- Updated .gitignore with complete ignore rules
-- Created GitHub Actions workflow for automated deployment
-- Configured astro.config.mjs for GitHub Pages with user's repository
-- Fixed mobile responsiveness issues in Hero section
-- Updated footer copyright to 2025
+November 17, 2025
+- **MAJOR REDESIGN: Brutalist Web Style**
+  - Complete visual overhaul from dark gradients to brutalist design
+  - High contrast black/white color scheme with gold accent (#FFD700)
+  - Bold typography using Space Grotesk font family
+  - Thick borders (4-8px), hard shadows, no gradients
+  - Minimalist, direct aesthetic
+- Removed all "available for opportunities" messaging from Contact section
+- Updated all components (Hero, Skills, Experience, Certifications, Contact) with brutalist design
+- Updated Layout.astro with brutalist theme variables
+- Changed from emojis to text-based labels in certifications
+- Updated fonts from Inter to Space Grotesk for headings
+- Simplified all hover effects to use offset box-shadows
+- Footer redesigned with black background and gold accents

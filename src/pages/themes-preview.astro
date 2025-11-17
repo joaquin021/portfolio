@@ -1,0 +1,955 @@
+---
+// Themes Preview Page
+const codeExample = `const engineer = {
+  name: "Joaquín Roca Soler",
+  role: "Senior Software Engineer"
+};`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Previews - Choose Your Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="theme-nav">
+      <h1>Choose Your Theme</h1>
+      <div class="nav-links">
+        <a href="#brutalist">Brutalist</a>
+        <a href="#terminal">Terminal</a>
+        <a href="#neo">Neomorphism</a>
+        <a href="#retro">Retro</a>
+      </div>
+    </nav>
+
+    <!-- BRUTALIST WEB STYLE -->
+    <section id="brutalist" class="theme-section brutalist">
+      <div class="theme-label">
+        <h2>01. BRUTALIST WEB</h2>
+        <p>Minimalista extremo • Alto contraste • Sin decoraciones</p>
+      </div>
+      <div class="brutalist-content">
+        <div class="brutalist-hero">
+          <h1 class="brutalist-name">JOAQUÍN<br/>ROCA</h1>
+          <div class="brutalist-line"></div>
+          <h2 class="brutalist-title">SENIOR SOFTWARE ENGINEER</h2>
+          <p class="brutalist-text">
+            I BUILD HIGH-PERFORMANCE SYSTEMS.<br/>
+            TELECOM • EVENT-DRIVEN • KUBERNETES
+          </p>
+          <div class="brutalist-buttons">
+            <button class="brutalist-btn primary">CONTACT</button>
+            <button class="brutalist-btn">WORK</button>
+          </div>
+          <div class="brutalist-code">
+            <div class="brutalist-code-header">engineer.java</div>
+            <pre>{codeExample}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMINAL/HACKER STYLE -->
+    <section id="terminal" class="theme-section terminal">
+      <div class="theme-label">
+        <h2>02. TERMINAL/HACKER</h2>
+        <p>Matrix vibes • Monospace • Green neon</p>
+      </div>
+      <div class="terminal-content">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span>●●●</span>
+            <span>joaquin@portfolio:~$</span>
+          </div>
+          <div class="terminal-body">
+            <p class="terminal-line"><span class="terminal-prompt">$</span> cat profile.txt</p>
+            <p class="terminal-output">
+              <span class="terminal-cursor">█</span><br/>
+              NAME: Joaquín Roca Soler<br/>
+              ROLE: Senior Software Engineer<br/>
+              LOCATION: Madrid, Spain<br/>
+              <br/>
+              SKILLS: [Java, Kubernetes, Kafka, Vert.x]<br/>
+              STATUS: Available for opportunities<br/>
+            </p>
+            <p class="terminal-line"><span class="terminal-prompt">$</span> ./run_expertise.sh</p>
+            <p class="terminal-output">
+              [OK] Telecom Provisioning Systems<br/>
+              [OK] Event-Driven Architecture<br/>
+              [OK] Reactive Programming<br/>
+              [OK] Cloud Native Solutions<br/>
+            </p>
+            <p class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-cursor-blink">█</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEOMORPHISM LIGHT STYLE -->
+    <section id="neo" class="theme-section neomorphism">
+      <div class="theme-label dark">
+        <h2>03. NEOMORPHISM LIGHT</h2>
+        <p>Clean • Soft shadows • Professional</p>
+      </div>
+      <div class="neo-content">
+        <div class="neo-hero">
+          <div class="neo-card main">
+            <h3 class="neo-greeting">Hello, I'm</h3>
+            <h1 class="neo-name">Joaquín Roca Soler</h1>
+            <h2 class="neo-title">Senior Software Engineer</h2>
+            <p class="neo-description">
+              Building high-performance provisioning systems for telecommunications.
+              Specialized in event-driven architectures and cloud-native solutions.
+            </p>
+            <div class="neo-buttons">
+              <button class="neo-btn primary">Get in Touch</button>
+              <button class="neo-btn">View Work</button>
+            </div>
+          </div>
+          <div class="neo-card code">
+            <div class="neo-code-header">
+              <div class="neo-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span>engineer.java</span>
+            </div>
+            <pre class="neo-code-content">{codeExample}</pre>
+          </div>
+          <div class="neo-stats">
+            <div class="neo-stat">
+              <div class="neo-stat-value">10+</div>
+              <div class="neo-stat-label">Years</div>
+            </div>
+            <div class="neo-stat">
+              <div class="neo-stat-value">5</div>
+              <div class="neo-stat-label">Certs</div>
+            </div>
+            <div class="neo-stat">
+              <div class="neo-stat-value">3</div>
+              <div class="neo-stat-label">Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RETRO TECH STYLE -->
+    <section id="retro" class="theme-section retro">
+      <div class="theme-label">
+        <h2>04. RETRO TECH (80s/90s)</h2>
+        <p>Synthwave • Vibrant gradients • Nostalgic future</p>
+      </div>
+      <div class="retro-content">
+        <div class="retro-hero">
+          <div class="retro-grid"></div>
+          <div class="retro-text">
+            <div class="retro-glitch" data-text="JOAQUÍN ROCA SOLER">JOAQUÍN ROCA SOLER</div>
+            <h2 class="retro-subtitle">SENIOR SOFTWARE ENGINEER</h2>
+            <div class="retro-line-container">
+              <div class="retro-line"></div>
+              <div class="retro-line"></div>
+              <div class="retro-line"></div>
+            </div>
+            <p class="retro-description">
+              BUILDING THE FUTURE OF TELECOM<br/>
+              EVENT-DRIVEN • CLOUD NATIVE • REACTIVE
+            </p>
+            <div class="retro-buttons">
+              <button class="retro-btn">CONTACT</button>
+              <button class="retro-btn">PORTFOLIO</button>
+            </div>
+          </div>
+          <div class="retro-code-block">
+            <div class="retro-scanlines"></div>
+            <pre>{codeExample}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="preview-footer">
+      <p>¿Cuál te gusta más? Una vez que elijas, aplicaré ese estilo a todo el portfolio.</p>
+      <a href="/" class="back-link">← Volver al portfolio actual</a>
+    </footer>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAVIGATION */
+  .theme-nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #000;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .theme-nav h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #666;
+  }
+
+  /* THEME SECTIONS */
+  .theme-section {
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+
+  .theme-label {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .theme-label h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .theme-label p {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  /* ==================== BRUTALIST STYLE ==================== */
+  .brutalist {
+    background: #fff;
+    color: #000;
+  }
+
+  .brutalist-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .brutalist-hero {
+    border: 8px solid #000;
+    padding: 3rem;
+    background: #fff;
+  }
+
+  .brutalist-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .brutalist-line {
+    width: 200px;
+    height: 8px;
+    background: #FFD700;
+    margin: 2rem 0;
+  }
+
+  .brutalist-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+  }
+
+  .brutalist-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .brutalist-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .brutalist-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 1rem 2rem;
+    border: 4px solid #000;
+    background: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s;
+    letter-spacing: 0.05em;
+  }
+
+  .brutalist-btn.primary {
+    background: #FFD700;
+  }
+
+  .brutalist-btn:hover {
+    transform: translate(4px, 4px);
+    box-shadow: -4px -4px 0 #000;
+  }
+
+  .brutalist-btn:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+  }
+
+  .brutalist-code {
+    border: 4px solid #000;
+    background: #f5f5f5;
+    margin-top: 2rem;
+  }
+
+  .brutalist-code-header {
+    background: #000;
+    color: #FFD700;
+    padding: 0.75rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .brutalist-code pre {
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+  }
+
+  /* ==================== TERMINAL STYLE ==================== */
+  .terminal {
+    background: #000;
+    color: #00ff00;
+  }
+
+  .terminal .theme-label {
+    color: #00ff00;
+  }
+
+  .terminal-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .terminal-window {
+    background: #0a0a0a;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+  }
+
+  .terminal-header {
+    background: #1a1a1a;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #00ff00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #00ff00;
+    font-size: 0.875rem;
+  }
+
+  .terminal-body {
+    padding: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .terminal-line {
+    margin: 1rem 0;
+    color: #00ff00;
+  }
+
+  .terminal-prompt {
+    color: #00ff00;
+    margin-right: 0.5rem;
+    font-weight: 700;
+  }
+
+  .terminal-output {
+    color: #00cc00;
+    margin: 0.5rem 0 1.5rem 1.5rem;
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    background: #00ff00;
+    color: #000;
+    animation: blink 1s infinite;
+  }
+
+  .terminal-cursor-blink {
+    display: inline-block;
+    background: #00ff00;
+    color: #000;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  /* ==================== NEOMORPHISM STYLE ==================== */
+  .neomorphism {
+    background: #e0e5ec;
+    color: #2c3e50;
+  }
+
+  .neomorphism .theme-label.dark {
+    color: #2c3e50;
+  }
+
+  .neo-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .neo-hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    grid-template-rows: auto auto;
+  }
+
+  .neo-card {
+    background: #e0e5ec;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow:
+      20px 20px 60px #bebebe,
+      -20px -20px 60px #ffffff;
+  }
+
+  .neo-card.main {
+    grid-row: 1 / 3;
+  }
+
+  .neo-greeting {
+    font-size: 1.25rem;
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .neo-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .neo-title {
+    font-size: 1.75rem;
+    color: #3498db;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .neo-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #546e7a;
+    margin-bottom: 2rem;
+  }
+
+  .neo-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .neo-btn {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow:
+      8px 8px 16px #bebebe,
+      -8px -8px 16px #ffffff;
+  }
+
+  .neo-btn.primary {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: white;
+  }
+
+  .neo-btn:hover {
+    box-shadow:
+      4px 4px 8px #bebebe,
+      -4px -4px 8px #ffffff;
+  }
+
+  .neo-btn:active {
+    box-shadow:
+      inset 4px 4px 8px #bebebe,
+      inset -4px -4px 8px #ffffff;
+  }
+
+  .neo-card.code {
+    padding: 0;
+    overflow: hidden;
+    grid-column: 2;
+  }
+
+  .neo-code-header {
+    background: #d1d9e6;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #546e7a;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+  }
+
+  .neo-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .neo-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 3px rgba(0,0,0,0.1);
+  }
+
+  .neo-dots span:nth-child(1) { background: #ff6b6b; }
+  .neo-dots span:nth-child(2) { background: #feca57; }
+  .neo-dots span:nth-child(3) { background: #48dbfb; }
+
+  .neo-code-content {
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: #2c3e50;
+    overflow-x: auto;
+  }
+
+  .neo-stats {
+    display: flex;
+    gap: 1rem;
+    grid-column: 2;
+  }
+
+  .neo-stat {
+    flex: 1;
+    background: #e0e5ec;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow:
+      8px 8px 16px #bebebe,
+      -8px -8px 16px #ffffff;
+  }
+
+  .neo-stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 0.5rem;
+  }
+
+  .neo-stat-label {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    font-weight: 500;
+  }
+
+  /* ==================== RETRO STYLE ==================== */
+  .retro {
+    background: #000;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .retro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      linear-gradient(180deg,
+        #ff00ff 0%,
+        #00ffff 25%,
+        #ffff00 50%,
+        #ff00ff 75%,
+        #00ffff 100%);
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  .retro .theme-label {
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  .retro-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .retro-hero {
+    position: relative;
+    padding: 3rem;
+  }
+
+  .retro-grid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    background:
+      linear-gradient(90deg, #ff00ff 1px, transparent 1px),
+      linear-gradient(0deg, #ff00ff 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    transform: perspective(500px) rotateX(60deg);
+    transform-origin: bottom;
+  }
+
+  .retro-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .retro-glitch {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow:
+      0 0 10px rgba(255, 0, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .retro-glitch::before,
+  .retro-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .retro-glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00ff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+
+  .retro-glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00ffff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+    animation-delay: 2s;
+  }
+
+  @keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 31px, 0); }
+    10% { clip: rect(70px, 9999px, 71px, 0); }
+    20% { clip: rect(60px, 9999px, 40px, 0); }
+    30% { clip: rect(20px, 9999px, 90px, 0); }
+    40% { clip: rect(80px, 9999px, 15px, 0); }
+    50% { clip: rect(30px, 9999px, 65px, 0); }
+    60% { clip: rect(50px, 9999px, 25px, 0); }
+    70% { clip: rect(40px, 9999px, 85px, 0); }
+    80% { clip: rect(90px, 9999px, 20px, 0); }
+    90% { clip: rect(15px, 9999px, 75px, 0); }
+    100% { clip: rect(55px, 9999px, 35px, 0); }
+  }
+
+  .retro-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 2rem;
+  }
+
+  .retro-line-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .retro-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    box-shadow: 0 0 10px currentColor;
+  }
+
+  .retro-description {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.125rem;
+    line-height: 2;
+    color: #ffff00;
+    text-shadow: 0 0 5px #ffff00;
+    margin-bottom: 3rem;
+    font-weight: 500;
+  }
+
+  .retro-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .retro-btn {
+    padding: 1rem 3rem;
+    background: transparent;
+    border: 3px solid #ff00ff;
+    color: #ff00ff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow:
+      0 0 10px rgba(255, 0, 255, 0.5),
+      inset 0 0 10px rgba(255, 0, 255, 0.2);
+  }
+
+  .retro-btn:hover {
+    background: #ff00ff;
+    color: #000;
+    box-shadow:
+      0 0 20px rgba(255, 0, 255, 0.8),
+      inset 0 0 20px rgba(255, 0, 255, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .retro-code-block {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow:
+      0 0 20px rgba(0, 255, 255, 0.5),
+      inset 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+
+  .retro-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 255, 0.05) 0px,
+      rgba(0, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+
+  .retro-code-block pre {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* FOOTER */
+  .preview-footer {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 2px solid #000;
+  }
+
+  .preview-footer p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+
+  .back-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.2s;
+  }
+
+  .back-link:hover {
+    background: #333;
+    transform: translateY(-2px);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 968px) {
+    .theme-nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .brutalist-hero {
+      padding: 2rem;
+    }
+
+    .brutalist-name {
+      font-size: 3rem;
+    }
+
+    .neo-hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .neo-card.main {
+      grid-row: auto;
+    }
+
+    .neo-card.code {
+      grid-column: auto;
+    }
+
+    .neo-stats {
+      grid-column: auto;
+    }
+
+    .retro-glitch {
+      font-size: 2.5rem;
+    }
+
+    .retro-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .retro-btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .theme-section {
+      padding: 2rem 1rem;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .brutalist-hero {
+      padding: 1.5rem;
+      border-width: 4px;
+    }
+
+    .brutalist-buttons {
+      flex-direction: column;
+    }
+
+    .terminal-body {
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .neo-card {
+      padding: 2rem;
+    }
+
+    .neo-name {
+      font-size: 2.5rem;
+    }
+
+    .neo-title {
+      font-size: 1.5rem;
+    }
+
+    .neo-buttons {
+      flex-direction: column;
+    }
+
+    .retro-hero {
+      padding: 1.5rem;
+    }
+
+    .retro-code-block {
+      padding: 1rem;
+    }
+
+    .retro-code-block pre {
+      font-size: 0.875rem;
+    }
+  }
+</style>

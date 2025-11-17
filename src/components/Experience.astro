@@ -1,10 +1,10 @@
 ---
 const experiences = [
   {
-    company: "Grupo MasOrange",
-    role: "Senior Software Engineer",
+    company: "GRUPO MASORANGE",
+    role: "SENIOR SOFTWARE ENGINEER",
     project: "Provision Squad",
-    period: "January 2024 - Present",
+    period: "JAN 2024 - PRESENT",
     current: true,
     description: "Developing software systems for provisioning telecommunications services including connectivity, TV, and mobile offerings",
     achievements: [
@@ -12,56 +12,52 @@ const experiences = [
       "Implementing event-driven architectures using Kafka for real-time service activation",
       "Orchestrating complex workflows with Uber Cadence for reliable service provisioning",
       "Working with Google Cloud (BigQuery, Cloud Storage) for data analytics and storage",
-      "Using Bazel for efficient build management and OpenAPI for service integration",
-      "Leveraging AI tools (GitHub Copilot, Claude Code) to boost development productivity"
+      "Using Bazel for efficient build management and OpenAPI for service integration"
     ],
-    tags: ["Java 21", "Vert.x", "Kafka", "Kubernetes", "Uber Cadence", "Google Cloud", "Bazel", "OpenAPI"]
+    tags: ["Java 21", "Vert.x", "Kafka", "Kubernetes", "Uber Cadence", "GCP", "Bazel", "OpenAPI"]
   },
   {
-    company: "BBVA Next Technologies",
-    role: "Software Architect",
+    company: "BBVA NEXT TECHNOLOGIES",
+    role: "SOFTWARE ARCHITECT",
     project: "LRBA Project",
-    period: "March 2020 - January 2024",
+    period: "MAR 2020 - JAN 2024",
     current: false,
     description: "Leading architecture design for ETL functionalities handling massive data volumes",
     achievements: [
       "Designed Spark-based architecture on Kubernetes for processing huge amounts of data",
       "Integrated multiple data systems: Oracle, DB2, MongoDB, ElasticSearch, S3, HDFS",
       "Simplified batch process development, enabling non-Spark experts to build applications",
-      "Implemented CI/CD pipelines using Jenkins, Maven, and Git",
-      "Tech stack: Java, Python, Go, Apache Spark"
+      "Implemented CI/CD pipelines using Jenkins, Maven, and Git"
     ],
     tags: ["Apache Spark", "Kubernetes", "ETL", "Java", "Python", "CI/CD"]
   },
   {
-    company: "BBVA Next Technologies",
-    role: "Software Architect",
+    company: "BBVA NEXT TECHNOLOGIES",
+    role: "SOFTWARE ARCHITECT",
     project: "APX Project",
-    period: "June 2018 - March 2020",
+    period: "JUN 2018 - MAR 2020",
     current: false,
     description: "Maintained and evolved critical banking architecture handling 80% of total transactions",
     achievements: [
       "Supported architecture processing 80% of bank's total transactions",
       "Provided utilities, libraries, and connectors for SQL and NoSQL databases",
       "Migrated to microservices architecture using gRPC for service communication",
-      "Deployed on Docker containers managed by OpenShift and Kubernetes",
-      "Built on OSGI standard with comprehensive CI/CD integration"
+      "Deployed on Docker containers managed by OpenShift and Kubernetes"
     ],
     tags: ["Microservices", "gRPC", "OSGI", "OpenShift", "MongoDB", "Oracle"]
   },
   {
-    company: "Odilo",
-    role: "Full Stack Developer",
+    company: "ODILO",
+    role: "FULL STACK DEVELOPER",
     project: "Microservices Platform",
-    period: "March 2014 - June 2018",
+    period: "MAR 2014 - JUN 2018",
     current: false,
     description: "Architected and developed microservices-based applications",
     achievements: [
       "Built applications using Java with Spring Boot and Spring Data",
       "Developed frontend interfaces with AngularJS",
       "Worked with multiple database technologies and AWS services",
-      "Implemented full agile workflow with daily standups and code reviews",
-      "Used JIRA kanban boards for project management"
+      "Implemented full agile workflow with daily standups and code reviews"
     ],
     tags: ["Spring Boot", "AngularJS", "AWS", "Microservices", "Agile"]
   }
@@ -71,62 +67,46 @@ const experiences = [
 <section id="experience" class="section experience-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Professional Experience</h2>
-      <p class="section-subtitle">
-        Over 10 years building enterprise-scale solutions for leading companies
-      </p>
+      <h2 class="section-title">EXPERIENCE</h2>
+      <div class="title-line"></div>
+      <p class="section-subtitle">10+ YEARS • ENTERPRISE-SCALE SOLUTIONS</p>
     </div>
 
-    <div class="timeline">
+    <div class="experiences">
       {experiences.map((exp, index) => (
-        <div class="timeline-item fade-in" style={`animation-delay: ${index * 0.15}s;`}>
-          <div class="timeline-marker">
-            <div class="timeline-dot"></div>
-            {index < experiences.length - 1 && <div class="timeline-line"></div>}
-          </div>
+        <div class="exp-card">
+          <div class="exp-number">{String(index + 1).padStart(2, '0')}</div>
 
-          <div class="experience-card">
-            {exp.current && (
-              <div class="current-badge">
-                <span class="pulse"></span>
-                Current
-              </div>
-            )}
+          {exp.current && (
+            <div class="current-badge">NOW</div>
+          )}
 
-            <div class="exp-header">
-              <div class="exp-title-section">
-                <h3 class="exp-role">{exp.role}</h3>
-                <div class="exp-company">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                  <span>{exp.company}</span>
-                </div>
-                <div class="exp-project">{exp.project}</div>
-              </div>
+          <div class="exp-header">
+            <h3 class="exp-role">{exp.role}</h3>
+            <div class="exp-meta">
+              <div class="exp-company">{exp.company}</div>
               <div class="exp-period">{exp.period}</div>
             </div>
+            <div class="exp-project">{exp.project}</div>
+          </div>
 
-            <p class="exp-description">{exp.description}</p>
+          <div class="exp-divider"></div>
 
-            <ul class="exp-achievements">
-              {exp.achievements.map((achievement) => (
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 11 12 14 22 4"></polyline>
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                  </svg>
-                  <span>{achievement}</span>
-                </li>
-              ))}
-            </ul>
+          <p class="exp-description">{exp.description}</p>
 
-            <div class="exp-tags">
-              {exp.tags.map((tag) => (
-                <span class="exp-tag">{tag}</span>
-              ))}
-            </div>
+          <div class="exp-achievements">
+            {exp.achievements.map((achievement) => (
+              <div class="achievement-item">
+                <div class="achievement-marker"></div>
+                <span>{achievement}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="exp-tags">
+            {exp.tags.map((tag) => (
+              <span class="exp-tag">{tag}</span>
+            ))}
           </div>
         </div>
       ))}
@@ -136,173 +116,164 @@ const experiences = [
 
 <style>
   .experience-section {
-    background: linear-gradient(180deg, transparent 0%, var(--color-bg-secondary) 50%, transparent 100%);
+    background: var(--color-bg);
   }
 
-  .timeline {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
+  .section-header {
+    margin-bottom: var(--spacing-3xl);
   }
 
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-2xl);
+  .section-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-md);
   }
 
-  .timeline-item:last-child {
-    margin-bottom: 0;
+  .title-line {
+    width: 150px;
+    height: var(--border-width);
+    background: var(--color-accent);
+    margin-bottom: var(--spacing-md);
   }
 
-  .timeline-marker {
+  .section-subtitle {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+  }
+
+  .experiences {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: var(--spacing-2xl);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .exp-card {
+    border: var(--border-width) solid var(--color-border);
+    padding: var(--spacing-2xl);
+    background: var(--color-bg);
     position: relative;
-  }
-
-  .timeline-dot {
-    width: 16px;
-    height: 16px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    border-radius: 50%;
-    border: 3px solid var(--color-bg);
-    box-shadow: 0 0 0 3px var(--color-bg-secondary);
-    position: relative;
-    z-index: 2;
-  }
-
-  .timeline-line {
-    width: 2px;
-    flex: 1;
-    background: linear-gradient(180deg, var(--color-border), transparent);
-    margin-top: var(--spacing-sm);
-  }
-
-  .experience-card {
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-lg);
     transition: var(--transition);
-    position: relative;
   }
 
-  .experience-card:hover {
-    transform: translateX(5px);
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+  .exp-card:hover {
+    transform: translate(6px, 6px);
+    box-shadow: -6px -6px 0 var(--color-border);
+  }
+
+  .exp-number {
+    position: absolute;
+    top: -20px;
+    left: var(--spacing-lg);
+    background: var(--color-bg-tertiary);
+    color: var(--color-accent);
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 0.5rem 1.5rem;
+    border: var(--border-width) solid var(--color-border);
   }
 
   .current-badge {
     position: absolute;
-    top: var(--spacing-md);
-    right: var(--spacing-md);
-    background: var(--color-primary);
-    color: white;
-    padding: 0.375rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .pulse {
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.2);
-    }
+    top: -20px;
+    right: var(--spacing-lg);
+    background: var(--color-accent);
+    color: var(--color-bg-tertiary);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 0.5rem 1.5rem;
+    letter-spacing: 0.15em;
+    border: var(--border-width) solid var(--color-border);
   }
 
   .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    padding-right: 120px;
-  }
-
-  .exp-title-section {
-    flex: 1;
+    margin-bottom: var(--spacing-lg);
   }
 
   .exp-role {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: var(--spacing-xs);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
   }
 
   .exp-company {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-primary);
+    font-family: var(--font-sans);
     font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-  }
-
-  .exp-company svg {
-    flex-shrink: 0;
-  }
-
-  .exp-project {
+    font-weight: 700;
     color: var(--color-text-secondary);
-    font-size: 0.95rem;
+    letter-spacing: 0.05em;
   }
 
   .exp-period {
-    color: var(--color-text-muted);
-    font-size: 0.875rem;
     font-family: var(--font-mono);
-    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .exp-project {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+
+  .exp-divider {
+    width: 100%;
+    height: var(--border-width);
+    background: var(--color-border);
+    margin: var(--spacing-lg) 0;
   }
 
   .exp-description {
-    color: var(--color-text-secondary);
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: var(--spacing-md);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
   }
 
   .exp-achievements {
-    list-style: none;
-    margin-bottom: var(--spacing-md);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
   }
 
-  .exp-achievements li {
+  .achievement-item {
     display: flex;
     gap: var(--spacing-sm);
-    color: var(--color-text-secondary);
+    align-items: start;
+    font-size: 0.9375rem;
     line-height: 1.6;
+    color: var(--color-text);
   }
 
-  .exp-achievements svg {
+  .achievement-marker {
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
     flex-shrink: 0;
-    margin-top: 0.2rem;
-    color: var(--color-primary);
+    margin-top: 0.5rem;
   }
 
   .exp-tags {
@@ -312,49 +283,52 @@ const experiences = [
   }
 
   .exp-tag {
-    background: var(--color-bg-tertiary);
-    color: var(--color-text-secondary);
-    padding: 0.25rem 0.625rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    border: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border: 2px solid var(--color-border);
+    background: var(--color-bg);
+    letter-spacing: 0.02em;
     transition: var(--transition);
   }
 
   .exp-tag:hover {
-    background: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
+    background: var(--color-bg-tertiary);
+    color: var(--color-accent);
   }
 
   /* Responsive */
   @media (max-width: 768px) {
-    .timeline-item {
-      grid-template-columns: 30px 1fr;
-      gap: var(--spacing-md);
+    .exp-card {
+      padding: var(--spacing-lg);
     }
 
-    .exp-header {
-      flex-direction: column;
-      padding-right: 0;
-    }
-
-    .exp-period {
-      white-space: normal;
+    .exp-number {
+      font-size: 1.5rem;
+      padding: 0.375rem 1rem;
+      top: -15px;
+      left: var(--spacing-md);
     }
 
     .current-badge {
-      position: static;
-      width: fit-content;
-      margin-bottom: var(--spacing-md);
+      font-size: 0.875rem;
+      padding: 0.375rem 1rem;
+      top: -15px;
+      right: var(--spacing-md);
     }
 
-    .experience-card {
-      padding: var(--spacing-md);
+    .exp-meta {
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .exp-role {
       font-size: 1.25rem;
+    }
+
+    .exp-company {
+      font-size: 1rem;
     }
   }
 </style>

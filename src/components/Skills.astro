@@ -1,108 +1,79 @@
 ---
 const skillCategories = [
   {
-    category: "Backend Development",
-    icon: "🚀",
+    category: "BACKEND",
     skills: ["Java 11 & 21", "Vert.x", "Python", "Spring Boot", "Hibernate", "Groovy"]
   },
   {
-    category: "Event-Driven & Messaging",
-    icon: "⚡",
+    category: "EVENT-DRIVEN",
     skills: ["Kafka", "Event-Driven Architecture", "Reactive Programming", "Uber Cadence"]
   },
   {
-    category: "Big Data & Processing",
-    icon: "📊",
+    category: "BIG DATA",
     skills: ["Apache Spark", "BigQuery", "ETL Pipelines", "Data Processing"]
   },
   {
-    category: "Cloud & Infrastructure",
-    icon: "☁️",
+    category: "CLOUD",
     skills: ["Google Cloud (BigQuery, GCS)", "AWS (S3, SQS, SNS)", "Docker", "Kubernetes", "OpenShift"]
   },
   {
-    category: "Databases",
-    icon: "💾",
+    category: "DATABASES",
     skills: ["Oracle", "MySQL", "PostgreSQL", "MongoDB", "ElasticSearch", "Neo4j"]
   },
   {
-    category: "API & Integration",
-    icon: "🔗",
-    skills: ["OpenAPI", "gRPC", "REST", "SOAP", "Microservices Architecture"]
+    category: "API & INTEGRATION",
+    skills: ["OpenAPI", "gRPC", "REST", "SOAP", "Microservices"]
   },
   {
-    category: "CI/CD & DevOps",
-    icon: "⚙️",
+    category: "CI/CD",
     skills: ["Bazel", "Jenkins Pipelines", "Maven", "Gradle", "Git", "SonarQube"]
   },
   {
-    category: "AI-Powered Development",
-    icon: "🤖",
+    category: "AI DEVELOPMENT",
     skills: ["GitHub Copilot", "Claude Code", "AI-Assisted Coding"]
   },
   {
-    category: "Methodologies",
-    icon: "📋",
+    category: "METHODOLOGIES",
     skills: ["Scrum", "Kanban", "TDD", "BDD", "Agile"]
   }
+];
+
+const coreCompetencies = [
+  "SOLUTION ARCHITECTURE",
+  "CI/CD & DEVOPS",
+  "JAVA ECOSYSTEM"
 ];
 ---
 
 <section id="skills" class="section skills-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Technical Skills</h2>
-      <p class="section-subtitle">
-        A comprehensive toolkit for building modern, scalable software solutions
-      </p>
+      <h2 class="section-title">TECHNICAL SKILLS</h2>
+      <div class="title-line"></div>
     </div>
 
     <div class="skills-grid">
-      {skillCategories.map((category, index) => (
-        <div class="skill-card fade-in" style={`animation-delay: ${index * 0.1}s;`}>
-          <div class="skill-card-header">
-            <span class="skill-icon">{category.icon}</span>
-            <h3 class="skill-category">{category.category}</h3>
-          </div>
-          <div class="skill-tags">
+      {skillCategories.map((category) => (
+        <div class="skill-card">
+          <h3 class="skill-category">{category.category}</h3>
+          <div class="skill-list">
             {category.skills.map((skill) => (
-              <span class="skill-tag">{skill}</span>
+              <div class="skill-item">{skill}</div>
             ))}
           </div>
         </div>
       ))}
     </div>
 
-    <div class="top-skills">
-      <h3 class="top-skills-title">Core Competencies</h3>
-      <div class="top-skills-list">
-        <div class="top-skill">
-          <div class="top-skill-content">
-            <span class="top-skill-name">Solution Architecture</span>
-            <span class="top-skill-level">Expert</span>
+    <div class="core-section">
+      <h3 class="core-title">CORE COMPETENCIES</h3>
+      <div class="core-grid">
+        {coreCompetencies.map((comp) => (
+          <div class="core-item">
+            <div class="core-marker"></div>
+            <span>{comp}</span>
           </div>
-          <div class="top-skill-bar">
-            <div class="top-skill-fill" style="width: 95%;"></div>
-          </div>
-        </div>
-        <div class="top-skill">
-          <div class="top-skill-content">
-            <span class="top-skill-name">CI/CD & DevOps</span>
-            <span class="top-skill-level">Expert</span>
-          </div>
-          <div class="top-skill-bar">
-            <div class="top-skill-fill" style="width: 95%;"></div>
-          </div>
-        </div>
-        <div class="top-skill">
-          <div class="top-skill-content">
-            <span class="top-skill-name">Java Ecosystem</span>
-            <span class="top-skill-level">Expert</span>
-          </div>
-          <div class="top-skill-bar">
-            <div class="top-skill-fill" style="width: 90%;"></div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </div>
@@ -110,165 +81,118 @@ const skillCategories = [
 
 <style>
   .skills-section {
-    background: linear-gradient(180deg, transparent 0%, var(--color-bg-secondary) 50%, transparent 100%);
+    background: var(--color-bg);
+    border-top: var(--border-width-thick) solid var(--color-border);
+    border-bottom: var(--border-width-thick) solid var(--color-border);
   }
 
   .section-header {
-    text-align: center;
     margin-bottom: var(--spacing-3xl);
   }
 
   .section-title {
-    margin-bottom: var(--spacing-sm);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-md);
   }
 
-  .section-subtitle {
-    color: var(--color-text-secondary);
-    font-size: 1.125rem;
-    max-width: 600px;
-    margin: 0 auto;
+  .title-line {
+    width: 150px;
+    height: var(--border-width);
+    background: var(--color-accent);
   }
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
     margin-bottom: var(--spacing-3xl);
   }
 
   .skill-card {
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-    transform: scaleX(0);
-    transform-origin: left;
+    border: var(--border-width) solid var(--color-border);
+    padding: var(--spacing-lg);
+    background: var(--color-bg);
     transition: var(--transition);
   }
 
   .skill-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-  }
-
-  .skill-card:hover::before {
-    transform: scaleX(1);
-  }
-
-  .skill-card-header {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .skill-icon {
-    font-size: 1.5rem;
+    transform: translate(4px, 4px);
+    box-shadow: -4px -4px 0 var(--color-border);
   }
 
   .skill-category {
+    font-family: var(--font-sans);
     font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--color-text);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: var(--border-width) solid var(--color-accent);
   }
 
-  .skill-tags {
+  .skill-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--spacing-xs);
   }
 
-  .skill-tag {
-    background: var(--color-bg-tertiary);
-    color: var(--color-text-secondary);
-    padding: 0.375rem 0.75rem;
-    border-radius: 6px;
+  .skill-item {
+    font-family: var(--font-mono);
     font-size: 0.875rem;
-    border: 1px solid var(--color-border);
+    padding: 0.5rem;
+    background: var(--color-bg-secondary);
+    border-left: 3px solid var(--color-border);
+    font-weight: 500;
     transition: var(--transition);
   }
 
-  .skill-tag:hover {
-    background: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-    transform: translateY(-2px);
+  .skill-item:hover {
+    border-left-color: var(--color-accent);
+    background: var(--color-bg);
+    padding-left: 0.75rem;
   }
 
-  /* Top Skills */
-  .top-skills {
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-xl);
-    max-width: 800px;
-    margin: 0 auto;
+  /* Core Competencies */
+  .core-section {
+    border: var(--border-width-thick) solid var(--color-border);
+    padding: var(--spacing-2xl);
+    background: var(--color-bg-tertiary);
+    color: var(--color-bg);
   }
 
-  .top-skills-title {
-    text-align: center;
+  .core-title {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
     margin-bottom: var(--spacing-lg);
-    color: var(--color-text);
+    color: var(--color-accent);
   }
 
-  .top-skills-list {
-    display: flex;
-    flex-direction: column;
+  .core-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-md);
   }
 
-  .top-skill {
+  .core-item {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-  }
-
-  .top-skill-content {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 
-  .top-skill-name {
-    font-weight: 500;
-    color: var(--color-text);
-  }
-
-  .top-skill-level {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-  }
-
-  .top-skill-bar {
-    height: 8px;
-    background: var(--color-bg-tertiary);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .top-skill-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    border-radius: 4px;
-    transition: width 1s ease-out;
+  .core-marker {
+    width: 20px;
+    height: 20px;
+    background: var(--color-accent);
+    flex-shrink: 0;
   }
 
   /* Responsive */
@@ -277,8 +201,12 @@ const skillCategories = [
       grid-template-columns: 1fr;
     }
 
-    .top-skills {
-      padding: var(--spacing-md);
+    .core-section {
+      padding: var(--spacing-lg);
+    }
+
+    .core-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

@@ -1,6 +1,6 @@
-# Portfolio - Joaquín Roca
+# Portfolio - Joaquín Roca Soler
 
-Personal portfolio of Joaquín Roca, Senior Software Engineer specialized in telecommunications provisioning systems and event-driven architectures.
+Personal portfolio of Joaquín Roca Soler, Senior Software Engineer specialized in telecommunications provisioning systems and event-driven architectures.
 
 ## Description
 
@@ -14,8 +14,9 @@ This is a modern and responsive portfolio built with Astro that showcases:
 
 - **Framework:** Astro v5.15.7
 - **Language:** TypeScript (strict mode)
-- **Fonts:** Inter (UI), JetBrains Mono (code)
+- **Fonts:** Space Grotesk (headings), JetBrains Mono (code)
 - **Styling:** Modular CSS with CSS variables
+- **Design:** Brutalist Web aesthetic
 
 ## Project Structure
 
@@ -54,12 +55,15 @@ This site is automatically deployed to GitHub Pages via GitHub Actions when push
 
 ## Design Features
 
-- Dark theme with gradients
-- Modern glassmorphism effects
-- Smooth animations and transitions
+- **Brutalist Web Design**
+- High contrast black and white theme
+- Bold typography (Space Grotesk font)
+- Thick borders and hard shadows
+- Gold (#FFD700) accent color
+- Minimalist, no-nonsense aesthetic
 - Responsive design (mobile-first)
 - Optimized accessibility
 
 ## License
 
-© 2024 Joaquín Roca. All rights reserved.
+© 2025 Joaquín Roca Soler. All rights reserved.

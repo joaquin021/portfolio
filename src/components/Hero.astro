@@ -1,15 +1,13 @@
 ---
-const codeHTML = `<span class="code-keyword">public class</span> <span class="code-class">SeniorSoftwareEngineer</span> {
-  <span class="code-keyword">private</span> String name = <span class="code-string">"Joaquín Roca"</span>;
-  <span class="code-keyword">private</span> String[] expertise = {
-    <span class="code-string">"Telecom Provisioning"</span>,
-    <span class="code-string">"Event-Driven Systems"</span>,
-    <span class="code-string">"Kubernetes"</span>,
-    <span class="code-string">"Reactive Programming"</span>
+const codeExample = `public class SeniorSoftwareEngineer {
+  private String name = "Joaquín Roca Soler";
+  private String[] stack = {
+    "Java 21", "Vert.x", "Kafka",
+    "Kubernetes", "Uber Cadence"
   };
 
-  <span class="code-keyword">public void</span> <span class="code-function">provision</span>() {
-    <span class="code-comment">// Building telco services with Java 21 & Vert.x</span>
+  public void provision() {
+    // Building telco @ scale
   }
 }`;
 ---
@@ -17,52 +15,35 @@ const codeHTML = `<span class="code-keyword">public class</span> <span class="co
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-text">
-        <div class="greeting fade-in">Hi, I'm</div>
-        <h1 class="name fade-in" style="animation-delay: 0.1s;">
-          Joaquín Roca
+      <div class="hero-main">
+        <h1 class="name">
+          JOAQUÍN<br/>ROCA SOLER
         </h1>
-        <h2 class="title fade-in" style="animation-delay: 0.2s;">
-          Senior Software Engineer
-        </h2>
-        <p class="description fade-in" style="animation-delay: 0.3s;">
-          I build high-performance provisioning systems for telecommunications services.
-          Specialized in event-driven architectures with Kafka, reactive programming with Vert.x,
-          workflow orchestration with Uber Cadence, and modern cloud-native solutions on Kubernetes.
+        <div class="accent-line"></div>
+        <h2 class="title">SENIOR SOFTWARE ENGINEER</h2>
+        <p class="description">
+          I BUILD HIGH-PERFORMANCE SYSTEMS.<br/>
+          TELECOM PROVISIONING • EVENT-DRIVEN ARCHITECTURE • KUBERNETES
         </p>
-        <div class="cta-buttons fade-in" style="animation-delay: 0.4s;">
-          <a href="#contact" class="btn btn-primary">Get in Touch</a>
-          <a href="#experience" class="btn btn-secondary">View Work</a>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary">CONTACT</a>
+          <a href="#experience" class="btn btn-secondary">WORK</a>
         </div>
-        <div class="location fade-in" style="animation-delay: 0.5s;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div class="location">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          <span>Alcalá de Henares, Madrid</span>
+          <span>ALCALÁ DE HENARES, MADRID</span>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="code-block">
-          <div class="code-header">
-            <div class="code-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <span class="code-title">engineer.java</span>
-          </div>
-          <div class="code-content">
-            <pre><code set:html={codeHTML}></code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="scroll-indicator">
-    <div class="mouse">
-      <div class="wheel"></div>
+      <div class="hero-code">
+        <div class="code-block">
+          <div class="code-header">engineer.java</div>
+          <pre><code>{codeExample}</code></pre>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -72,49 +53,56 @@ const codeHTML = `<span class="code-keyword">public class</span> <span class="co
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-bg);
   }
 
   .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: var(--spacing-3xl);
-    align-items: center;
+    align-items: start;
   }
 
-  .hero-text {
-    z-index: 1;
-  }
-
-  .greeting {
-    font-size: 1.25rem;
-    color: var(--color-primary);
-    font-weight: 500;
-    margin-bottom: var(--spacing-sm);
+  .hero-main {
+    border: var(--border-width-thick) solid var(--color-border);
+    padding: var(--spacing-2xl);
+    background: var(--color-bg);
   }
 
   .name {
-    margin-bottom: var(--spacing-xs);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family: var(--font-sans);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+  }
+
+  .accent-line {
+    width: 200px;
+    height: var(--border-width-thick);
+    background: var(--color-accent);
+    margin: var(--spacing-lg) 0;
   }
 
   .title {
-    color: var(--color-text-secondary);
-    font-weight: 600;
-    margin-bottom: var(--spacing-md);
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
   }
 
   .description {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.8;
     margin-bottom: var(--spacing-xl);
-    max-width: 600px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
   }
 
   .cta-buttons {
@@ -124,174 +112,84 @@ const codeHTML = `<span class="code-keyword">public class</span> <span class="co
   }
 
   .btn {
-    padding: 0.875rem 1.75rem;
-    border-radius: var(--border-radius);
-    font-weight: 500;
+    padding: 1rem 2rem;
+    border: var(--border-width) solid var(--color-border);
+    background: var(--color-bg);
+    font-family: var(--font-sans);
     font-size: 1rem;
-    transition: var(--transition);
-    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     cursor: pointer;
+    transition: all 0.1s ease;
+    text-decoration: none;
+    color: var(--color-text);
+    display: inline-block;
+    position: relative;
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: white;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    background: var(--color-accent);
+    border-color: var(--color-border);
   }
 
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  .btn:hover {
+    transform: translate(4px, 4px);
+    box-shadow: -4px -4px 0 var(--color-border);
   }
 
-  .btn-secondary {
-    background: var(--color-bg-secondary);
-    color: var(--color-text);
-    border: 2px solid var(--color-border);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--color-primary);
-    background: var(--color-bg-tertiary);
+  .btn:active {
+    transform: translate(0, 0);
+    box-shadow: none;
   }
 
   .location {
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
   }
 
   .location svg {
-    color: var(--color-primary);
+    color: var(--color-text);
   }
 
-  /* Code Block Visual */
-  .hero-visual {
-    position: relative;
+  /* Code Block */
+  .hero-code {
+    position: sticky;
+    top: var(--spacing-xl);
   }
 
   .code-block {
+    border: var(--border-width) solid var(--color-border);
     background: var(--color-bg-secondary);
-    border-radius: var(--border-radius);
     overflow: hidden;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    animation: float 6s ease-in-out infinite;
   }
 
   .code-header {
     background: var(--color-bg-tertiary);
+    color: var(--color-accent);
     padding: var(--spacing-sm);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .code-dots {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .code-dots span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: block;
-  }
-
-  .code-dots span:nth-child(1) {
-    background: #ff5f56;
-  }
-
-  .code-dots span:nth-child(2) {
-    background: #ffbd2e;
-  }
-
-  .code-dots span:nth-child(3) {
-    background: #27c93f;
-  }
-
-  .code-title {
     font-family: var(--font-mono);
+    font-weight: 700;
     font-size: 0.875rem;
-    color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
   }
 
-  .code-content {
+  .code-block pre {
     padding: var(--spacing-md);
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    line-height: 1.8;
+    margin: 0;
     overflow-x: auto;
   }
 
-  .code-content pre {
-    margin: 0;
-  }
-
-  .code-keyword {
-    color: #c792ea;
-  }
-
-  .code-class {
-    color: #ffcb6b;
-  }
-
-  .code-string {
-    color: #c3e88d;
-  }
-
-  .code-function {
-    color: #82aaff;
-  }
-
-  .code-comment {
-    color: var(--color-text-muted);
-    font-style: italic;
-  }
-
-  /* Scroll Indicator */
-  .scroll-indicator {
-    position: absolute;
-    bottom: var(--spacing-xl);
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.6;
-  }
-
-  .mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid var(--color-text-muted);
-    border-radius: 15px;
-    position: relative;
-    animation: float 2s ease-in-out infinite;
-  }
-
-  .wheel {
-    width: 3px;
-    height: 8px;
-    background: var(--color-primary);
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scroll 1.5s ease-in-out infinite;
-  }
-
-  @keyframes scroll {
-    0%, 100% {
-      opacity: 0;
-      transform: translateX(-50%) translateY(0);
-    }
-    50% {
-      opacity: 1;
-      transform: translateX(-50%) translateY(8px);
-    }
+  .code-block code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text);
   }
 
   /* Responsive */
@@ -301,18 +199,36 @@ const codeHTML = `<span class="code-keyword">public class</span> <span class="co
       gap: var(--spacing-2xl);
     }
 
-    .hero-visual {
+    .hero-code {
+      position: static;
       order: -1;
     }
 
-    .code-content {
+    .code-block code {
       font-size: 0.75rem;
     }
   }
 
   @media (max-width: 640px) {
     .hero {
-      padding: var(--spacing-2xl) var(--spacing-md);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-main {
+      padding: var(--spacing-lg);
+      border-width: var(--border-width);
+    }
+
+    .name {
+      font-size: 2.5rem;
+    }
+
+    .title {
+      font-size: 1.125rem;
+    }
+
+    .description {
+      font-size: 0.875rem;
     }
 
     .cta-buttons {
@@ -320,39 +236,17 @@ const codeHTML = `<span class="code-keyword">public class</span> <span class="co
     }
 
     .btn {
+      width: 100%;
       text-align: center;
     }
 
-    .code-block {
-      font-size: 0.65rem;
-      margin: 0 calc(-1 * var(--spacing-md));
-      max-width: calc(100vw - 2 * var(--spacing-md));
+    .accent-line {
+      width: 120px;
+      height: var(--border-width);
     }
 
-    .code-content {
-      font-size: 0.65rem;
-      padding: var(--spacing-sm);
-      overflow-x: auto;
-    }
-
-    .code-content pre {
-      min-width: max-content;
-    }
-
-    .description {
-      font-size: 1rem;
-    }
-
-    .name {
-      font-size: 2rem;
-    }
-
-    .title {
-      font-size: 1.5rem;
-    }
-
-    .scroll-indicator {
-      display: none;
+    .code-block code {
+      font-size: 0.7rem;
     }
   }
 </style>
