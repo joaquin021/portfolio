@@ -7,6 +7,7 @@ Personal portfolio of Joaquín Roca Soler, Senior Software Engineer specialized 
 This is a modern and responsive portfolio built with Astro that showcases:
 - Professional experience
 - Technical skills
+- Personal tech projects (homelab, IoT, 3D printing)
 - Professional certifications
 - Contact information
 
@@ -22,13 +23,13 @@ This is a modern and responsive portfolio built with Astro that showcases:
 
 ```text
 portfolio/
-├── .vibe/                      # Project context and documentation
 ├── src/
 │   ├── layouts/
 │   │   └── Layout.astro        # Base layout with global styles
 │   ├── components/
 │   │   ├── Hero.astro          # Hero section with intro
 │   │   ├── Skills.astro        # Technical skills grid
+│   │   ├── TechLab.astro       # Personal tech projects
 │   │   ├── Experience.astro    # Professional experience timeline
 │   │   ├── Certifications.astro # Professional certifications
 │   │   └── Contact.astro       # Contact information
