@@ -25,6 +25,9 @@ const codeExample = `public class SeniorSoftwareEngineer {
           I BUILD HIGH-PERFORMANCE SYSTEMS.<br/>
           TELECOM PROVISIONING • EVENT-DRIVEN ARCHITECTURE • KUBERNETES
         </p>
+        <p class="tech-passion">
+          OFF WORK: HOMELABS • ESP32 PROJECTS • 3D PRINTING
+        </p>
         <div class="cta-buttons">
           <a href="#contact" class="btn btn-primary">CONTACT</a>
           <a href="#experience" class="btn btn-secondary">WORK</a>
@@ -100,9 +103,22 @@ const codeExample = `public class SeniorSoftwareEngineer {
     font-family: var(--font-mono);
     font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.8;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
     color: var(--color-text-secondary);
     font-weight: 500;
+  }
+
+  .tech-passion {
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border-left: var(--border-width) solid var(--color-accent);
+    color: var(--color-text-muted);
+    font-weight: 500;
+    letter-spacing: 0.05em;
   }
 
   .cta-buttons {

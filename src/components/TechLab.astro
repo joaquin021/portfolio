@@ -1,0 +1,251 @@
+---
+const projects = [
+  {
+    category: "HOMELAB & INFRASTRUCTURE",
+    icon: "▉",
+    description: "Self-hosted services running on Proxmox VMs/LXC and TrueNAS",
+    highlights: [
+      "Home automation with HomeAssistant & ESPHome",
+      "Secure access via Wireguard & Tailscale VPN",
+      "Self-hosted password manager (Vaultwarden)",
+      "Monitoring stack with Grafana & InfluxDB",
+      "Private Git hosting with Gitea",
+      "Media server (Jellyfin) and photo backup (Immich)"
+    ],
+    tags: ["Proxmox", "TrueNAS", "HomeAssistant", "Docker", "VPN"]
+  },
+  {
+    category: "IoT & MICROCONTROLLERS",
+    icon: "◈",
+    description: "Custom hardware projects for home automation",
+    highlights: [
+      "Smart thermostat with ESP32 (running in production for years)",
+      "Integration with HomeAssistant via MQTT",
+      "Temperature and humidity monitoring",
+      "Custom firmware development"
+    ],
+    tags: ["ESP32", "ESPHome", "MQTT", "C++", "IoT"]
+  },
+  {
+    category: "3D PRINTING & FABRICATION",
+    icon: "⬢",
+    description: "Building and designing custom hardware solutions",
+    highlights: [
+      "Self-built Voron 0.2 CoreXY printer (custom assembly)",
+      "Creality Ender 3 V3 for rapid prototyping",
+      "Printed RC car project (Cramer by Duke Doks)",
+      "Custom enclosures and mounting solutions"
+    ],
+    tags: ["Voron 0.2", "Ender 3 V3", "CAD", "Hardware"]
+  }
+];
+---
+
+<section id="techlab" class="section techlab-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">TECH LAB</h2>
+      <div class="title-line"></div>
+      <p class="section-subtitle">WHEN I'M NOT BUILDING ENTERPRISE SYSTEMS, I'M BUILDING EVERYTHING ELSE</p>
+    </div>
+
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <div class="project-card">
+          <div class="project-icon">{project.icon}</div>
+          <h3 class="project-category">{project.category}</h3>
+          <p class="project-description">{project.description}</p>
+
+          <div class="project-divider"></div>
+
+          <div class="project-highlights">
+            {project.highlights.map((highlight) => (
+              <div class="highlight-item">
+                <div class="highlight-marker"></div>
+                <span>{highlight}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="project-tags">
+            {project.tags.map((tag) => (
+              <span class="project-tag">{tag}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .techlab-section {
+    background: var(--color-bg-secondary);
+    border-top: var(--border-width-thick) solid var(--color-border);
+    border-bottom: var(--border-width-thick) solid var(--color-border);
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .section-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .title-line {
+    width: 150px;
+    height: var(--border-width);
+    background: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-subtitle {
+    font-family: var(--font-mono);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    max-width: 800px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-2xl);
+  }
+
+  .project-card {
+    border: var(--border-width) solid var(--color-border);
+    padding: var(--spacing-2xl);
+    background: var(--color-bg);
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .project-card:hover {
+    transform: translate(6px, 6px);
+    box-shadow: -6px -6px 0 var(--color-border);
+  }
+
+  .project-icon {
+    position: absolute;
+    top: -20px;
+    right: var(--spacing-lg);
+    background: var(--color-accent);
+    color: var(--color-bg-tertiary);
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-width) solid var(--color-border);
+  }
+
+  .project-category {
+    font-family: var(--font-sans);
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+  }
+
+  .project-description {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+  }
+
+  .project-divider {
+    width: 60px;
+    height: var(--border-width);
+    background: var(--color-accent);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .project-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .highlight-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: start;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  .highlight-marker {
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .project-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border: 2px solid var(--color-border);
+    background: var(--color-bg-secondary);
+    letter-spacing: 0.02em;
+    transition: var(--transition);
+  }
+
+  .project-tag:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-accent);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      padding: var(--spacing-lg);
+    }
+
+    .project-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.25rem;
+      top: -15px;
+      right: var(--spacing-md);
+    }
+
+    .project-category {
+      font-size: 1.125rem;
+    }
+
+    .project-description {
+      font-size: 0.875rem;
+    }
+
+    .highlight-item {
+      font-size: 0.8125rem;
+    }
+  }
+</style>
