@@ -7,5 +7,6 @@ export default defineConfig({
   // GitHub Pages configuration
   site: 'https://joaquin021.github.io',
   base: '/portfolio',
+  trailingSlash: 'always',
   integrations: [sitemap()],
 });
