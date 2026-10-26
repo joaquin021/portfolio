@@ -36,16 +36,16 @@ const projects = [
   {
     category: "HOMELAB & INFRASTRUCTURE",
     icon: serverIcon,
-    description: "Self-hosted services running on Proxmox VMs/LXC and TrueNAS",
+    description: "Self-hosted services on Proxmox VMs/LXC and TrueNAS at home, plus Oracle Cloud",
     highlights: [
-      "Home automation with HomeAssistant & ESPHome",
-      "Secure access via Wireguard & Tailscale VPN",
-      "Self-hosted password manager (Vaultwarden)",
+      "OPNsense firewall on Proxmox with a DMZ to expose web services to the internet, strictly isolated from the home network",
+      "Self-hosted mail server on Oracle Cloud, protected with CrowdSec",
+      "Secure remote access via WireGuard & Tailscale VPN",
+      "Home automation with Home Assistant & ESPHome",
       "Monitoring stack with Grafana & InfluxDB",
-      "Private Git hosting with Gitea",
-      "Media server (Jellyfin) and photo backup (Immich)"
+      "Self-hosted Vaultwarden, Gitea, Jellyfin and Immich"
     ],
-    tags: ["Proxmox", "TrueNAS", "HomeAssistant", "Docker", "VPN"]
+    tags: ["Proxmox", "TrueNAS", "OPNsense", "CrowdSec", "Oracle Cloud", "Docker", "Home Assistant"]
   },
   {
     category: "IoT & MICROCONTROLLERS",
@@ -53,11 +53,12 @@ const projects = [
     description: "Custom hardware projects for home automation",
     highlights: [
       "Smart thermostat with ESP32 (running in production for years)",
+      "3D-printed Hogwarts castle hiding a temperature sensor and an IR emitter to control the AC",
       "Integration with HomeAssistant via MQTT",
       "Temperature and humidity monitoring",
       "Custom firmware development"
     ],
-    tags: ["ESP32", "ESPHome", "MQTT", "C++", "IoT"]
+    tags: ["ESP32", "ESPHome", "MQTT", "Infrared", "C++", "IoT"]
   },
   {
     category: "3D PRINTING & FABRICATION",
@@ -67,6 +68,7 @@ const projects = [
       "Self-built Voron 0.2 CoreXY printer (custom assembly)",
       "Prusa Core One L for rapid prototyping",
       "Printed RC car project (Cramer by Duke Doks)",
+      "Designed and built an acrylic enclosure for filament storage",
       "Custom enclosures and mounting solutions"
     ],
     tags: ["Voron 0.2", "Prusa Core One L", "CAD", "Hardware"]
