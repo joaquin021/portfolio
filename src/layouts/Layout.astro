@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Software Architect specializing in distributed systems, microservices, and cloud infrastructure" } = Astro.props;
+const { title, description = "Senior Software Engineer building telecom provisioning systems at Orange. Former Software Architect at BBVA. Java, Kafka, Kubernetes and event-driven architectures." } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/portfolio/og-image.png', Astro.site);
@@ -29,6 +29,8 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
@@ -42,7 +44,8 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Joaquín Roca Soler",
-      "jobTitle": "Software Architect",
+      "jobTitle": "Senior Software Engineer",
+      "worksFor": { "@type": "Organization", "name": "Orange" },
       "description": description,
       "url": "https://joaquin021.github.io/portfolio/",
       "sameAs": [
@@ -51,21 +54,23 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
       ],
       "knowsAbout": [
         "Software Architecture",
+        "Event-Driven Architecture",
         "Distributed Systems",
         "Microservices",
         "Cloud Infrastructure",
         "Kubernetes",
         "Java",
-        "Go"
+        "Kafka"
       ]
     })} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <slot />
   </body>
 </html>
@@ -94,6 +99,7 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
     --border-width: 4px;
     --border-width-thick: 8px;
     --transition: all 0.15s ease;
+    --nav-height: 4rem;
   }
 
   * {
@@ -105,6 +111,7 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
   }
 
   body {
@@ -118,23 +125,20 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
 
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: -0.02em;
   }
 
   h1 {
     font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 900;
   }
 
   h2 {
     font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
   }
 
   h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 700;
   }
 
   a {
@@ -142,10 +146,6 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
     text-decoration: none;
     transition: var(--transition);
     font-weight: 600;
-  }
-
-  a:hover {
-    color: var(--color-accent);
   }
 
   /* Brutalist Scrollbar */
@@ -167,6 +167,59 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
     background: var(--color-accent);
   }
 
+  /* Accessibility */
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 4px var(--color-accent);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: var(--spacing-sm);
+    z-index: 200;
+    background: var(--color-accent);
+    color: var(--color-text);
+    border: var(--border-width) solid var(--color-border);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-family: var(--font-mono);
+    font-weight: 700;
+  }
+
+  .skip-link:focus {
+    top: var(--spacing-sm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+
+    *:hover {
+      transform: none !important;
+    }
+  }
+
   /* Utility classes */
   .container {
     max-width: 1200px;
@@ -182,45 +235,5 @@ const ogImage = new URL('/portfolio/og-image.png', Astro.site);
     .section {
       padding: var(--spacing-2xl) 0;
     }
-  }
-
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .slide-in {
-    animation: slideIn 0.6s ease-out forwards;
   }
 </style>

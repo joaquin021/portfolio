@@ -1,4 +1,6 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const certifications = [
   {
     name: "CERTIFIED KUBERNETES ADMINISTRATOR",
@@ -35,11 +37,7 @@ const certifications = [
 
 <section id="certifications" class="section certifications-section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">CERTIFICATIONS</h2>
-      <div class="title-line"></div>
-      <p class="section-subtitle">CLOUD • DATABASE • AGILE METHODOLOGIES</p>
-    </div>
+    <SectionHeader title="CERTIFICATIONS" subtitle="CLOUD • DATABASE • AGILE METHODOLOGIES" />
 
     <div class="certifications-grid">
       {certifications.map((cert) => (
@@ -63,33 +61,6 @@ const certifications = [
     background: var(--color-bg);
     border-top: var(--border-width-thick) solid var(--color-border);
     border-bottom: var(--border-width-thick) solid var(--color-border);
-  }
-
-  .section-header {
-    margin-bottom: var(--spacing-3xl);
-  }
-
-  .section-title {
-    font-family: var(--font-sans);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .title-line {
-    width: 150px;
-    height: var(--border-width);
-    background: var(--color-accent);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .section-subtitle {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--color-text-secondary);
   }
 
   .certifications-grid {
@@ -119,7 +90,7 @@ const certifications = [
     color: var(--color-bg-tertiary);
     font-family: var(--font-sans);
     font-size: 0.875rem;
-    font-weight: 900;
+    font-weight: 700;
     padding: 0.5rem 1rem;
     letter-spacing: 0.1em;
     border: var(--border-width) solid var(--color-border);
@@ -128,7 +99,7 @@ const certifications = [
   .cert-name {
     font-family: var(--font-sans);
     font-size: 1.125rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.3;
     letter-spacing: 0.02em;
     margin-bottom: var(--spacing-sm);

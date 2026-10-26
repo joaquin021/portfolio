@@ -1,4 +1,6 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const serverIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
   <rect x="2" y="4" width="20" height="5" />
   <rect x="2" y="11" width="20" height="5" />
@@ -74,16 +76,12 @@ const projects = [
 
 <section id="techlab" class="section techlab-section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">TECH LAB</h2>
-      <div class="title-line"></div>
-      <p class="section-subtitle">WHEN I'M NOT BUILDING ENTERPRISE SYSTEMS, I'M BUILDING EVERYTHING ELSE</p>
-    </div>
+    <SectionHeader title="TECH LAB" subtitle="WHEN I'M NOT BUILDING ENTERPRISE SYSTEMS, I'M BUILDING EVERYTHING ELSE" />
 
     <div class="projects-grid">
       {projects.map((project) => (
         <div class="project-card">
-          <div class="project-icon" set:html={project.icon}></div>
+          <div class="project-icon" aria-hidden="true" set:html={project.icon}></div>
           <h3 class="project-category">{project.category}</h3>
           <p class="project-description">{project.description}</p>
 
@@ -114,34 +112,6 @@ const projects = [
     background: var(--color-bg-secondary);
     border-top: var(--border-width-thick) solid var(--color-border);
     border-bottom: var(--border-width-thick) solid var(--color-border);
-  }
-
-  .section-header {
-    margin-bottom: var(--spacing-3xl);
-  }
-
-  .section-title {
-    font-family: var(--font-sans);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .title-line {
-    width: 150px;
-    height: var(--border-width);
-    background: var(--color-accent);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .section-subtitle {
-    font-family: var(--font-mono);
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: var(--color-text-secondary);
-    max-width: 800px;
   }
 
   .projects-grid {
@@ -186,7 +156,7 @@ const projects = [
   .project-category {
     font-family: var(--font-sans);
     font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin-bottom: var(--spacing-sm);
     line-height: 1.2;
@@ -267,7 +237,6 @@ const projects = [
     .project-icon {
       width: 40px;
       height: 40px;
-      font-size: 1.25rem;
       top: -15px;
       right: var(--spacing-md);
     }

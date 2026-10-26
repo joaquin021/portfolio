@@ -1,76 +1,74 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const experiences = [
   {
     company: "ORANGE",
     role: "SENIOR SOFTWARE ENGINEER",
-    project: "Provision Squad",
+    project: "Provisioning",
     period: "JAN 2024 - PRESENT",
     current: true,
-    description: "Developing software systems for provisioning telecommunications services including connectivity, TV, and mobile offerings",
+    description: "Building the platform that orchestrates fiber provisioning with Telefónica's wholesale services (NEBA and NEBA Local), replacing a legacy system",
     achievements: [
-      "Building high-performance provisioning systems with Java 21 and Vert.x reactive framework",
-      "Implementing event-driven architectures using Kafka for real-time service activation",
-      "Orchestrating complex workflows with Uber Cadence for reliable service provisioning",
-      "Working with Google Cloud (BigQuery, Cloud Storage) for data analytics and storage",
-      "Using Bazel for efficient build management and OpenAPI for service integration"
+      "Built from scratch with my team and taken to production, where it handles new customer activations every day",
+      "Simplified a highly complex integration with Telefónica into a flow that runs reliably",
+      "Obsessive about quality: continuous optimization and bug hunting so that every activation goes through cleanly",
+      "Event-driven design with Kafka and long-running workflows orchestrated with Uber Cadence",
+      "Technical reference within the team, regularly brought into design and technical decisions"
     ],
-    tags: ["Java 21", "Vert.x", "Kafka", "Kubernetes", "Uber Cadence", "GCP", "Bazel", "OpenAPI"]
+    tags: ["Java 21", "Vert.x", "Kafka", "Uber Cadence", "Kubernetes", "GCP", "Bazel", "OpenAPI"]
   },
   {
     company: "BBVA NEXT TECHNOLOGIES",
     role: "SOFTWARE ARCHITECT",
-    project: "LRBA Project",
+    project: "LRBA · Batch Architecture",
     period: "MAR 2020 - JAN 2024",
     current: false,
-    description: "Leading architecture design for ETL functionalities handling massive data volumes",
+    description: "Lead developer and architect of the bank's batch processing architecture, designed from scratch with my team",
     achievements: [
-      "Designed Spark-based architecture on Kubernetes for processing huge amounts of data",
-      "Integrated multiple data systems: Oracle, DB2, MongoDB, ElasticSearch, S3, HDFS",
-      "Simplified batch process development, enabling non-Spark experts to build applications",
-      "Implemented CI/CD pipelines using Jenkins, Maven, and Git"
+      "Conceived and designed a Spark-on-Kubernetes batch architecture and took it from zero to production",
+      "Adopted by many applications across the bank, running hundreds of processes every night",
+      "Made batch development accessible to teams with no Spark experience",
+      "Connectors for Oracle, DB2, MongoDB, ElasticSearch, S3 and HDFS"
     ],
-    tags: ["Apache Spark", "Kubernetes", "ETL", "Java", "Python", "CI/CD"]
+    tags: ["Apache Spark", "Kubernetes", "Java", "Python", "ETL", "CI/CD"]
   },
   {
     company: "BBVA NEXT TECHNOLOGIES",
     role: "SOFTWARE ARCHITECT",
-    project: "APX Project",
+    project: "APX · Core Banking Architecture",
     period: "JUN 2018 - MAR 2020",
     current: false,
-    description: "Maintained and evolved critical banking architecture handling 80% of total transactions",
+    description: "Developer in the architecture team behind the platform that processes 80% of the bank's transactions",
     achievements: [
-      "Supported architecture processing 80% of bank's total transactions",
-      "Provided utilities, libraries, and connectors for SQL and NoSQL databases",
-      "Migrated to microservices architecture using gRPC for service communication",
-      "Deployed on Docker containers managed by OpenShift and Kubernetes"
+      "Migrated the architecture's MongoDB library, a critical component nobody was keen to touch",
+      "Diagnosed and fixed a thread management bottleneck in the architecture, significantly reducing processing times",
+      "Contributed to the early design of the move to gRPC microservices",
+      "Services running on Docker, OpenShift and Kubernetes"
     ],
-    tags: ["Microservices", "gRPC", "OSGI", "OpenShift", "MongoDB", "Oracle"]
+    tags: ["Java", "OSGI", "gRPC", "MongoDB", "Oracle", "OpenShift"]
   },
   {
     company: "ODILO",
     role: "FULL STACK DEVELOPER",
-    project: "Microservices Platform",
+    project: "Digital Archive & Preservation",
     period: "MAR 2014 - JUN 2018",
     current: false,
-    description: "Architected and developed microservices-based applications",
+    description: "Document archiving and digital preservation software for public administration",
     achievements: [
-      "Built applications using Java with Spring Boot and Spring Data",
-      "Developed frontend interfaces with AngularJS",
-      "Worked with multiple database technologies and AWS services",
+      "Designed a digital preservation tool compliant with Spanish government regulations, working directly from the official legal texts",
+      "Adapted the archive to e-government processes and electronic records under the ENI (National Interoperability Framework)",
+      "Modernized a late-90s product: from Java 6, EJB, Struts, JSP and Ant to Spring services, Java 8, AngularJS and Gradle",
       "Implemented full agile workflow with daily standups and code reviews"
     ],
-    tags: ["Spring Boot", "AngularJS", "AWS", "Microservices", "Agile"]
+    tags: ["Java", "Spring", "AngularJS", "Gradle", "AWS", "Legacy Migration", "Agile"]
   }
 ];
 ---
 
 <section id="experience" class="section experience-section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">EXPERIENCE</h2>
-      <div class="title-line"></div>
-      <p class="section-subtitle">12+ YEARS • ENTERPRISE-SCALE SOLUTIONS</p>
-    </div>
+    <SectionHeader title="EXPERIENCE" subtitle="12+ YEARS • ENTERPRISE-SCALE SOLUTIONS" />
 
     <div class="experiences">
       {experiences.map((exp, index) => (
@@ -119,33 +117,6 @@ const experiences = [
     background: var(--color-bg);
   }
 
-  .section-header {
-    margin-bottom: var(--spacing-3xl);
-  }
-
-  .section-title {
-    font-family: var(--font-sans);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .title-line {
-    width: 150px;
-    height: var(--border-width);
-    background: var(--color-accent);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .section-subtitle {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--color-text-secondary);
-  }
-
   .experiences {
     display: flex;
     flex-direction: column;
@@ -175,7 +146,7 @@ const experiences = [
     color: var(--color-accent);
     font-family: var(--font-sans);
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: 700;
     padding: 0.5rem 1.5rem;
     border: var(--border-width) solid var(--color-border);
   }
@@ -188,7 +159,7 @@ const experiences = [
     color: var(--color-bg-tertiary);
     font-family: var(--font-sans);
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: 700;
     padding: 0.5rem 1.5rem;
     letter-spacing: 0.15em;
     border: var(--border-width) solid var(--color-border);
@@ -201,7 +172,7 @@ const experiences = [
   .exp-role {
     font-family: var(--font-sans);
     font-size: clamp(1.25rem, 3vw, 1.75rem);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin-bottom: var(--spacing-sm);
   }

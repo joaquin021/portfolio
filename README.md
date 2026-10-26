@@ -67,4 +67,4 @@ This site is automatically deployed to GitHub Pages via GitHub Actions when push
 
 ## License
 
-© 2025 Joaquín Roca Soler. All rights reserved.
+© Joaquín Roca Soler. All rights reserved.

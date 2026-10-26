@@ -1,9 +1,23 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const contactInfo = [
   {
     label: "EMAIL",
-    value: "jroca.dev@proton.me",
-    href: "mailto:jroca.dev@proton.me"
+    value: "dev@jotaio.me",
+    href: "mailto:dev@jotaio.me"
+  },
+  {
+    label: "LINKEDIN",
+    value: "in/joaquín-roca-soler",
+    href: "https://www.linkedin.com/in/joaqu%C3%ADn-roca-soler-89049584/",
+    external: true
+  },
+  {
+    label: "GITHUB",
+    value: "github.com/joaquin021",
+    href: "https://github.com/joaquin021",
+    external: true
   },
   {
     label: "LOCATION",
@@ -17,23 +31,27 @@ const quickFacts = [
   { number: "5", label: "CERTS" },
   { number: "3", label: "COMPANIES" }
 ];
+
+const currentYear = new Date().getFullYear();
 ---
 
 <section id="contact" class="section contact-section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">CONTACT</h2>
-      <div class="title-line"></div>
-    </div>
+    <SectionHeader title="CONTACT" />
 
     <div class="contact-grid">
       <div class="contact-main">
         <div class="contact-cards">
           {contactInfo.map((info) => (
             info.href ? (
-              <a href={info.href} class="contact-card">
+              <a
+                href={info.href}
+                class="contact-card"
+                {...(info.external && { target: "_blank", rel: "noopener noreferrer" })}
+              >
                 <div class="contact-label">{info.label}</div>
                 <div class="contact-value">{info.value}</div>
+                {info.external && <span class="sr-only">(opens in a new tab)</span>}
               </a>
             ) : (
               <div class="contact-card">
@@ -78,7 +96,7 @@ const quickFacts = [
         <div class="footer-title">SENIOR SOFTWARE ENGINEER</div>
       </div>
       <div class="footer-meta">
-        <span>© 2025</span>
+        <span>© {currentYear}</span>
         <span>•</span>
         <span>BUILT WITH ASTRO</span>
       </div>
@@ -90,24 +108,6 @@ const quickFacts = [
   .contact-section {
     background: var(--color-bg);
     border-top: var(--border-width-thick) solid var(--color-border);
-  }
-
-  .section-header {
-    margin-bottom: var(--spacing-3xl);
-  }
-
-  .section-title {
-    font-family: var(--font-sans);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .title-line {
-    width: 150px;
-    height: var(--border-width);
-    background: var(--color-accent);
   }
 
   .contact-grid {
@@ -146,7 +146,7 @@ const quickFacts = [
   .contact-label {
     font-family: var(--font-sans);
     font-size: 0.875rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.15em;
     margin-bottom: var(--spacing-xs);
     color: var(--color-text-secondary);
@@ -157,6 +157,7 @@ const quickFacts = [
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-text);
+    overflow-wrap: anywhere;
   }
 
   /* Education */
@@ -170,7 +171,7 @@ const quickFacts = [
   .education-title {
     font-family: var(--font-sans);
     font-size: 1.25rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.15em;
     margin-bottom: var(--spacing-md);
     color: var(--color-accent);
@@ -216,7 +217,7 @@ const quickFacts = [
   .facts-title {
     font-family: var(--font-sans);
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.1em;
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-md);
@@ -224,8 +225,8 @@ const quickFacts = [
   }
 
   .facts-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
 
@@ -244,7 +245,7 @@ const quickFacts = [
   .fact-number {
     font-family: var(--font-sans);
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1;
     margin-bottom: var(--spacing-sm);
     color: var(--color-text);
@@ -278,7 +279,7 @@ const quickFacts = [
   .footer-name {
     font-family: var(--font-sans);
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--color-accent);
   }

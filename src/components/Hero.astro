@@ -22,8 +22,11 @@ const codeExample = `public class SeniorSoftwareEngineer {
         <div class="accent-line"></div>
         <h2 class="title">SENIOR SOFTWARE ENGINEER</h2>
         <p class="description">
-          I BUILD HIGH-PERFORMANCE SYSTEMS.<br/>
-          TELECOM PROVISIONING • EVENT-DRIVEN ARCHITECTURE • KUBERNETES
+          Building the systems that provision connectivity, TV and mobile services at Orange.
+          Previously Software Architect at BBVA, on the platform behind 80% of the bank's transactions.
+        </p>
+        <p class="focus">
+          JAVA • KAFKA • EVENT-DRIVEN • KUBERNETES
         </p>
         <p class="tech-passion">
           OFF WORK: HOMELABS • ESP32 PROJECTS • 3D PRINTING
@@ -33,7 +36,7 @@ const codeExample = `public class SeniorSoftwareEngineer {
           <a href="#experience" class="btn btn-secondary">WORK</a>
         </div>
         <div class="location">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
@@ -53,7 +56,7 @@ const codeExample = `public class SeniorSoftwareEngineer {
 
 <style>
   .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - var(--nav-height));
     display: flex;
     align-items: center;
     padding: var(--spacing-3xl) 0;
@@ -76,7 +79,7 @@ const codeExample = `public class SeniorSoftwareEngineer {
   .name {
     font-family: var(--font-sans);
     font-size: clamp(3rem, 10vw, 6rem);
-    font-weight: 900;
+    font-weight: 700;
     line-height: 0.9;
     letter-spacing: -0.03em;
     margin-bottom: var(--spacing-md);
@@ -106,6 +109,15 @@ const codeExample = `public class SeniorSoftwareEngineer {
     margin-bottom: var(--spacing-md);
     color: var(--color-text-secondary);
     font-weight: 500;
+  }
+
+  .focus {
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
   }
 
   .tech-passion {
@@ -211,13 +223,12 @@ const codeExample = `public class SeniorSoftwareEngineer {
   /* Responsive */
   @media (max-width: 968px) {
     .hero-content {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: var(--spacing-2xl);
     }
 
     .hero-code {
       position: static;
-      order: -1;
     }
 
     .code-block code {

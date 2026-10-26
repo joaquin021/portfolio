@@ -1,20 +1,22 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const skillCategories = [
   {
     category: "BACKEND",
-    skills: ["Java 11 & 21", "Vert.x", "Python", "Spring Boot", "Hibernate", "Groovy"]
+    skills: ["Java", "Vert.x", "Spring Boot", "Python", "Hibernate", "Groovy"]
   },
   {
     category: "EVENT-DRIVEN",
-    skills: ["Kafka", "Event-Driven Architecture", "Reactive Programming", "Uber Cadence"]
+    skills: ["Kafka", "Reactive Programming", "Uber Cadence"]
   },
   {
     category: "BIG DATA",
-    skills: ["Apache Spark", "BigQuery", "ETL Pipelines", "Data Processing"]
+    skills: ["Apache Spark", "BigQuery", "ETL Pipelines"]
   },
   {
     category: "CLOUD",
-    skills: ["Google Cloud (BigQuery, GCS)", "AWS (S3, SQS, SNS)", "Docker", "Kubernetes", "OpenShift"]
+    skills: ["Google Cloud", "AWS (S3, SQS, SNS)", "Docker", "Kubernetes", "OpenShift"]
   },
   {
     category: "DATABASES",
@@ -30,11 +32,11 @@ const skillCategories = [
   },
   {
     category: "AI DEVELOPMENT",
-    skills: ["GitHub Copilot", "Claude Code", "AI-Assisted Coding"]
+    skills: ["Claude Code", "GitHub Copilot"]
   },
   {
     category: "METHODOLOGIES",
-    skills: ["Scrum", "Kanban", "TDD", "BDD", "Agile"]
+    skills: ["Scrum", "Kanban", "TDD", "BDD"]
   }
 ];
 
@@ -47,9 +49,18 @@ const coreCompetencies = [
 
 <section id="skills" class="section skills-section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">TECHNICAL SKILLS</h2>
-      <div class="title-line"></div>
+    <SectionHeader title="TECHNICAL SKILLS" />
+
+    <div class="core-section">
+      <h3 class="core-title">CORE COMPETENCIES</h3>
+      <div class="core-grid">
+        {coreCompetencies.map((comp) => (
+          <div class="core-item">
+            <div class="core-marker"></div>
+            <span>{comp}</span>
+          </div>
+        ))}
+      </div>
     </div>
 
     <div class="skills-grid">
@@ -64,18 +75,6 @@ const coreCompetencies = [
         </div>
       ))}
     </div>
-
-    <div class="core-section">
-      <h3 class="core-title">CORE COMPETENCIES</h3>
-      <div class="core-grid">
-        {coreCompetencies.map((comp) => (
-          <div class="core-item">
-            <div class="core-marker"></div>
-            <span>{comp}</span>
-          </div>
-        ))}
-      </div>
-    </div>
   </div>
 </section>
 
@@ -86,29 +85,10 @@ const coreCompetencies = [
     border-bottom: var(--border-width-thick) solid var(--color-border);
   }
 
-  .section-header {
-    margin-bottom: var(--spacing-3xl);
-  }
-
-  .section-title {
-    font-family: var(--font-sans);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .title-line {
-    width: 150px;
-    height: var(--border-width);
-    background: var(--color-accent);
-  }
-
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-3xl);
   }
 
   .skill-card {
@@ -126,7 +106,7 @@ const coreCompetencies = [
   .skill-category {
     font-family: var(--font-sans);
     font-size: 1.125rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.1em;
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-sm);
@@ -161,12 +141,13 @@ const coreCompetencies = [
     padding: var(--spacing-2xl);
     background: var(--color-bg-tertiary);
     color: var(--color-bg);
+    margin-bottom: var(--spacing-3xl);
   }
 
   .core-title {
     font-family: var(--font-sans);
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.15em;
     margin-bottom: var(--spacing-lg);
     color: var(--color-accent);
